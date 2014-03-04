@@ -1,0 +1,16 @@
+{
+    "name": "mochasinon",
+    "version": "0.1.0",
+    "description": "Sinon.JS integration for the Mocha test harness",
+    "keywords": [
+        "mocha",
+        "sinon",
+        "stub",
+        "mocking"
+    ],
+    "main": "./index.js",
+    "dependencies": {
+        "sinon": ">= 1.7.0 <2",
+        "mocha": ">= 1.8.0 <2"
+    }
+}

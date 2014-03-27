@@ -78,6 +78,8 @@
                 useFakeTimers: false,
                 useFakeServer: false
             });
+            context.spy = context.spy.bind(context._sandbox);
+            context.stub = context.stub.bind(context._sandbox);
             context.useFakeServer = function () {
                 context._sandbox.useFakeServer();
                 context.server = context._sandbox.server;
@@ -111,8 +113,8 @@
             delete context.useFakeXMLHttpRequest;
             if (context._sandbox.parent) {
                 context._sandbox = context._sandbox.parent;
-                context.spy = context._sandbox.spy;
-                context.stub = context._sandbox.stub;
+                context.spy = context._sandbox.spy.bind(context._sandbox);
+                context.stub = context._sandbox.stub.bind(context._sandbox);
                 context.mock = context._sandbox.mock;
                 context.clock = context._sandbox.clock;
                 context.server = context._sandbox.server;

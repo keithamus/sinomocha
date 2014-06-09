@@ -1,6 +1,6 @@
 {
     "name": "sinomocha",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "Sinon.JS integration for the Mocha test harness",
     "main": "index.js",
     "url": "https://github.com/keithamus/sinomocha",

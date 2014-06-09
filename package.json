@@ -3,6 +3,8 @@
     "version": "0.1.0",
     "description": "Sinon.JS integration for the Mocha test harness",
     "main": "index.js",
+    "url": "https://github.com/keithamus/sinomocha",
+    "repository": "https://github.com/keithamus/sinoocha.git",
     "scripts": {
         "test": "./node_modules/.bin/mocha -R spec"
     },

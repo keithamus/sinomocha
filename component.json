@@ -1,6 +1,6 @@
 {
     "name": "mochasinon",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "Sinon.JS integration for the Mocha test harness",
     "keywords": [
         "mocha",

@@ -73,24 +73,22 @@
         return function setupSandbox() {
             var oldSandbox = context._sandbox;
             context._sandbox = sinon.sandbox.create({
-                injectInto: context,
                 properties: ['spy', 'stub', 'mock', 'clock', 'server', 'requests'],
                 useFakeTimers: false,
                 useFakeServer: false
             });
-            context.spy = context.spy.bind(context._sandbox);
-            context.stub = context.stub.bind(context._sandbox);
+            context._sandbox.inject(context);
             context.useFakeServer = function () {
                 context._sandbox.useFakeServer();
-                context.server = context._sandbox.server;
+                context._sandbox.inject(context);
             }
             context.useFakeTimers = function () {
                 context._sandbox.useFakeTimers();
-                context.clock = context._sandbox.clock;
+                context._sandbox.inject(context);
             }
             context.useFakeXMLHttpRequest = function () {
                 context._sandbox.useFakeXMLHttpRequest();
-                context.requests = context._sandbox.requests;
+                context._sandbox.inject(context);
             }
             if (oldSandbox) {
                 context._sandbox.parent = oldSandbox;
@@ -113,15 +111,7 @@
             delete context.useFakeXMLHttpRequest;
             if (context._sandbox.parent) {
                 context._sandbox = context._sandbox.parent;
-                context.spy = context._sandbox.spy.bind(context._sandbox);
-                context.stub = context._sandbox.stub.bind(context._sandbox);
-                context.mock = context._sandbox.mock;
-                context.clock = context._sandbox.clock;
-                context.server = context._sandbox.server;
-                context.requests = context._sandbox.requests;
-                context.useFakeServer = context._sandbox.useFakeServer;
-                context.useFakeTimers = context._sandbox.useFakeTimers;
-                context.useFakeXMLHttpRequest = context._sandbox.useFakeXMLHttpRequest;
+                context._sandbox.inject(context);
             }
         }
     }

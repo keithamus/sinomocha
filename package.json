@@ -21,6 +21,7 @@
         "mocha": ">= 1.18.0 <2"
     },
     "devDependencies": {
-        "assert": "1.0.0"
+        "sinon": ">= 1.9.0 <2",
+        "mocha": ">= 1.18.0 <2"
     }
 }

@@ -18,10 +18,10 @@
   ],
   "peerDependencies": {
     "sinon": ">= 1.9.0 <2",
-    "mocha": ">= 1.18.0 <2"
+    "mocha": ">= 1.18.0 <3"
   },
   "devDependencies": {
     "sinon": ">= 1.9.0 <2",
-    "mocha": ">= 1.18.0 <2"
+    "mocha": ">= 1.18.0 <3"
   }
 }
